@@ -1,0 +1,60 @@
+{
+  "name": "client",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "build": "react-app-rewired build",
+    "eject": "react-app-rewired eject",
+    "dev": "PORT=7778 react-app-rewired start",
+    "test": "react-app-rewired test",
+    "generate": "yarn generate:resolvers && yarn generate:relay",
+    "generate:relay": "relay-compiler --src ./src --schema ./src/schema/schema.graphql --language typescript --extensions ts tsx --artifactDirectory ./src/__generated__",
+    "generate:resolvers": "graphql-codegen"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "dependencies": {
+    "axios": "^0.19.2",
+    "graphql": "^15.0.0",
+    "graphql-tools": "^5.0.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-relay": "^9.1.0"
+  },
+  "devDependencies": {
+    "@graphql-codegen/cli": "^1.13.3",
+    "@graphql-codegen/typescript": "^1.13.3",
+    "@graphql-codegen/typescript-resolvers": "^1.13.3",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.3.2",
+    "@testing-library/user-event": "^7.1.2",
+    "@types/jest": "^24.0.0",
+    "@types/node": "^12.0.0",
+    "@types/react": "^16.9.0",
+    "@types/react-dom": "^16.9.0",
+    "@types/react-relay": "^7.0.3",
+    "@types/relay-runtime": "^8.0.9",
+    "babel-plugin-relay": "^9.1.0",
+    "customize-cra": "^0.9.1",
+    "raw-loader": "^4.0.1",
+    "react-app-rewired": "^2.1.5",
+    "react-scripts": "3.4.1",
+    "relay-compiler": "^9.1.0",
+    "relay-compiler-language-typescript": "^12.0.1",
+    "relay-config": "^9.1.0",
+    "typescript": "~3.7.2"
+  }
+}

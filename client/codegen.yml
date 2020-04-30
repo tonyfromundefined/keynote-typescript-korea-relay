@@ -1,0 +1,12 @@
+overwrite: true
+schema:
+  - ./src/schema/schema.graphql
+generates:
+  src/schema/resolvers/_types.ts:
+    config:
+      noNamespaces: true
+      contextType: ../context#Context
+      mappers: {}
+    plugins:
+      - 'typescript'
+      - 'typescript-resolvers'
